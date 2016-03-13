@@ -1,0 +1,36 @@
+body{
+  background: url('/assets/background.jpg');
+}
+.container{
+
+}
+.bloco-login{
+  margin: 15% 33.3%;
+  min-height: 200px;
+  border: solid 1px #FFF;
+  background: rgba(0, 0, 0, 0.7)
+}
+.bloco-login h3{
+  color: #FFF;
+}
+.bloco-login input{
+  height: 30px;
+  border: none;
+  margin: 10px 12.3%;
+}
+.bloco-login .submit{
+  color: #FFF;
+  float: right;
+  font-size: 8pt;
+  font-weight: bold;
+  background: #03C103;
+  margin-bottom: 20px;
+}
+@media (max-width: 991px){
+  .bloco-login input{
+    margin: 5px 0px !important;
+  }
+  .bloco-login .submit{
+    margin: 5px 0% !important;
+  }
+}
