@@ -26,6 +26,14 @@ body{
   background: #03C103;
   margin-bottom: 20px;
 }
+.bloco-competicao{
+  background: #FFF;
+}
+.competicao-item{
+  padding: 5%;
+  margin: 10px 4.1%;
+  border: solid 1px #000;
+}
 @media (max-width: 991px){
   .bloco-login input{
     margin: 5px 0px !important;

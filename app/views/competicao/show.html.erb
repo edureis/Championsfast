@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>Champions Fast</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  </head>
+
+  <body>
+    <h1>Campeonatos em andamento</h1>
+    <p>
+      <b>Nome: </b>
+      <%= @competicao.nome %>
+    </p>
+    <p>
+      <b>Tipo: </b>
+      <%= @competicao.competicao_tipo.nome %>
+    </p>
+  </body>
+
+</html>
