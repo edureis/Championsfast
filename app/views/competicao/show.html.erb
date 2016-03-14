@@ -17,6 +17,7 @@
       <b>Tipo: </b>
       <%= @competicao.competicao_tipo.nome %>
     </p>
+    <%= link_to 'Deletar', {:action => 'destroy', :id => @competicao.id} %>
   </body>
 
 </html>

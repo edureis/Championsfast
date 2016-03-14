@@ -11,8 +11,14 @@ class CompeticaoController < ActionController::Base
   end
 
   def new
-    @competicao = Competicao.all
-    render :template => 'layouts/championship'
+    @competicao = Competicao.new
+    render :template => 'competicao/new'
+  end
+
+  def destroy
+    @competicao = Competicao.find(params[:id])
+    @competicao.destroy
+    redirect_to(action: "show")
   end
 
 end

@@ -27,12 +27,33 @@ body{
   margin-bottom: 20px;
 }
 .bloco-competicao{
-  background: #FFF;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+}
+.bloco-competicao h1{
+  color: #FFF;
+  margin: 40px;
 }
 .competicao-item{
-  padding: 5%;
+  padding: 0px;
   margin: 10px 4.1%;
-  border: solid 1px #000;
+  border: solid 1px #FFF;
+}
+.competicao-item:hover{
+  color: #FFF;
+  border: solid 1px #FFF;
+  background: rgba(51, 124, 187, 0.7);
+}
+.competicao-item span{
+  color: #FFF;
+  width: 100%;
+  float: left;
+  font-size: 14pt;
+  margin: 10px 0px;
+}
+.competicao-item img{
+  width: 40px;
 }
 @media (max-width: 991px){
   .bloco-login input{

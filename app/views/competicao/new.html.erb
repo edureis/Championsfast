@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>Champions Fast</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  </head>
+
+  <body>
+    <%= form_for @competicao do |f| %>
+      Nome: <%= f.text_field :nome %><br/>
+      Endereço: <%= f.text_field :endereco %><br/>
+      Especialidade: <%= f.text_field :especialidade %><br/>
+      <%= f.submit %>
+    <% end %>
+  </body>
+
+</html>
