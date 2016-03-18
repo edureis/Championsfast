@@ -10,8 +10,11 @@
   <body>
     <%= form_for @competicao do |f| %>
       Nome: <%= f.text_field :nome %><br/>
-      Endereço: <%= f.text_field :endereco %><br/>
-      Especialidade: <%= f.text_field :especialidade %><br/>
+      <span id='busca_ajax_corretorbairro'>
+        <%= render :partial => "/partials/competicao_tipo" %>
+      </span>
+      Quantidade Max.: <%= f.text_field :usuario_maximo %><br/>
+      Quantidade Min.: <%= f.text_field :usuario_minimo %><br/>
       <%= f.submit %>
     <% end %>
   </body>
