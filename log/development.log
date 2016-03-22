@@ -12041,3 +12041,148 @@ Started GET "/assets/application.self-2a55c53e6202e9bdb5e80abd07cfda84159f829e13
 
 
 Started GET "/assets/background.jpg" for 127.0.0.1 at 2016-03-18 17:36:17 -0300
+
+
+Started GET "/competicaos" for 127.0.0.1 at 2016-03-18 17:40:16 -0300
+Processing by CompeticaosController#index as HTML
+  [1m[36mCompeticao Load (61.5ms)[0m  [1mSELECT `competicaos`.* FROM `competicaos`  ORDER BY `competicaos`.`nome` ASC[0m
+  [1m[35mCompeticaoTipo Load (94.3ms)[0m  SELECT  `competicao_tipos`.* FROM `competicao_tipos` WHERE `competicao_tipos`.`id` = 2 LIMIT 1
+  [1m[36mCompeticaoTipo Load (0.5ms)[0m  [1mSELECT  `competicao_tipos`.* FROM `competicao_tipos` WHERE `competicao_tipos`.`id` = 1 LIMIT 1[0m
+  [1m[35mCompeticaoTipo Load (0.4ms)[0m  SELECT  `competicao_tipos`.* FROM `competicao_tipos` WHERE `competicao_tipos`.`id` = 3 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `competicao_tipos`.* FROM `competicao_tipos` WHERE `competicao_tipos`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `competicao_tipos`.* FROM `competicao_tipos` WHERE `competicao_tipos`.`id` = 2 LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  `competicao_tipos`.* FROM `competicao_tipos` WHERE `competicao_tipos`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `competicao_tipos`.* FROM `competicao_tipos` WHERE `competicao_tipos`.`id` = 3 LIMIT 1  [["id", 3]]
+  Rendered competicao/competicao.html.erb (757.9ms)
+Completed 200 OK in 949ms (Views: 611.8ms | ActiveRecord: 161.0ms)
+
+
+Started GET "/assets/background.jpg" for 127.0.0.1 at 2016-03-18 17:40:18 -0300
+
+
+Started GET "/competicaos/new" for 127.0.0.1 at 2016-03-18 17:40:54 -0300
+Processing by CompeticaosController#new as HTML
+  [1m[36mCompeticaoTipo Load (0.4ms)[0m  [1mSELECT `competicao_tipos`.`nome` FROM `competicao_tipos`[0m
+  Rendered partials/_competicao_tipo.html.erb (2.8ms)
+  Rendered competicao/new.html.erb (176.1ms)
+Completed 200 OK in 179ms (Views: 177.7ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/competicaos" for 127.0.0.1 at 2016-03-18 17:44:22 -0300
+Processing by CompeticaosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VvBnh2yPfXYdZxFlvtUPoWDJp9nueRR/qcDnlLEiKjJfYdFClT49PW7JCi0Akmvq5RPM8rQ6SGU1asnOH2HFag==", "competicao"=>{"nome"=>"sadsadasdsd", "usuario_maximo"=>"10", "usuario_minimo"=>"0"}, "competicao_tipo"=>"Copa", "commit"=>"Create Competicao"}
+  [1m[35m (23.9ms)[0m  BEGIN
+  [1m[36mSQL (2.7ms)[0m  [1mINSERT INTO `competicaos` (`nome`) VALUES ('sadsadasdsd')[0m
+Mysql2::Error: Field 'competicao_tipo_id' doesn't have a default value: INSERT INTO `competicaos` (`nome`) VALUES ('sadsadasdsd')
+  [1m[35m (0.2ms)[0m  ROLLBACK
+Completed 500 Internal Server Error in 63ms (ActiveRecord: 28.6ms)
+
+ActiveRecord::StatementInvalid (Mysql2::Error: Field 'competicao_tipo_id' doesn't have a default value: INSERT INTO `competicaos` (`nome`) VALUES ('sadsadasdsd')):
+  app/controllers/competicaos_controller.rb:26:in `create'
+
+
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.4ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.7ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (35.6ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (20.4ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (40.5ms)
+
+
+Started GET "/competicaos/new" for 127.0.0.1 at 2016-03-18 17:44:58 -0300
+Processing by CompeticaosController#new as HTML
+  [1m[36mCompeticaoTipo Load (0.4ms)[0m  [1mSELECT `competicao_tipos`.`nome` FROM `competicao_tipos`[0m
+  Rendered partials/_competicao_tipo.html.erb (10.2ms)
+  Rendered competicao/new.html.erb (31.1ms)
+Completed 200 OK in 34ms (Views: 30.8ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/assets/bootstrap.self-8201ff75eb49daeca150e69eabbafb557975fdfa7ac2562d89eb8e5de0fcf478.css?body=1" for 127.0.0.1 at 2016-03-18 17:44:58 -0300
+
+
+Started GET "/assets/estilo.self-b458ee121f99e0cb7fc8f5cc741cf41f60daebe4115fcd708793613cc02217ef.css?body=1" for 127.0.0.1 at 2016-03-18 17:44:58 -0300
+
+
+Started GET "/assets/restaurantes.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-03-18 17:44:58 -0300
+
+
+Started GET "/assets/application.self-167193cd81d9330d9ddb5c4ec7b44214fea529aa8a94f3a86e6526e4f652fc02.css?body=1" for 127.0.0.1 at 2016-03-18 17:44:58 -0300
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-03-18 17:44:58 -0300
+
+
+Started GET "/assets/bootstrap.min.self-d66e555f160df017adf1ca16a36cd609a36d49c51637e365c5b8847d0065fa40.js?body=1" for 127.0.0.1 at 2016-03-18 17:44:58 -0300
+
+
+Started GET "/assets/jquery.min.self-724d05db7d87a6180b7759d6ec7ac6056fe9d2e86875ac0e608a9c5d4e27c13d.js?body=1" for 127.0.0.1 at 2016-03-18 17:44:58 -0300
+
+
+Started GET "/assets/restaurantes.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-03-18 17:44:58 -0300
+
+
+Started GET "/assets/application.self-2a55c53e6202e9bdb5e80abd07cfda84159f829e13ab5de60332d1cd0ab87084.js?body=1" for 127.0.0.1 at 2016-03-18 17:44:58 -0300
+
+
+Started GET "/assets/background.jpg" for 127.0.0.1 at 2016-03-18 17:44:58 -0300
+
+
+Started POST "/competicaos" for 127.0.0.1 at 2016-03-18 17:45:03 -0300
+Processing by CompeticaosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ih+PUTG+iZY5myANl9k3PST2oX9wirYrLaCv+G3BWgqDjjmUyA/J3Uo1O0UpnlN2oSzKVCrJ6jGxCoGiw4K1Ug==", "competicao"=>{"nome"=>"ewweewew", "usuario_maximo"=>"10", "usuario_minimo"=>"0"}, "competicao_tipo_id"=>"Liga", "commit"=>"Create Competicao"}
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36mSQL (2.7ms)[0m  [1mINSERT INTO `competicaos` (`nome`) VALUES ('ewweewew')[0m
+Mysql2::Error: Field 'competicao_tipo_id' doesn't have a default value: INSERT INTO `competicaos` (`nome`) VALUES ('ewweewew')
+  [1m[35m (0.4ms)[0m  ROLLBACK
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 3.4ms)
+
+ActiveRecord::StatementInvalid (Mysql2::Error: Field 'competicao_tipo_id' doesn't have a default value: INSERT INTO `competicaos` (`nome`) VALUES ('ewweewew')):
+  app/controllers/competicaos_controller.rb:26:in `create'
+
+
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.7ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.2ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (32.7ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (20.5ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (41.0ms)
+
+
+Started GET "/competicaos/new" for 127.0.0.1 at 2016-03-18 17:46:13 -0300
+Processing by CompeticaosController#new as HTML
+  Rendered partials/_competicao_tipo.html.erb (19.5ms)
+  Rendered competicao/new.html.erb (40.4ms)
+Completed 500 Internal Server Error in 43ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined local variable or method `f' for #<#<Class:0x007f4b9ab3b040>:0x007f4ba848aaa8>):
+    1: <%= f.select_tag 'competicao_tipo_id', options_for_select(buscar_competicao) %>
+  app/views/partials/_competicao_tipo.html.erb:1:in `_app_views_partials__competicao_tipo_html_erb___2928790573642593628_69981439740240'
+  app/views/competicao/new.html.erb:14:in `block in _app_views_competicao_new_html_erb___2122299339273678101_69981347367280'
+  app/views/competicao/new.html.erb:11:in `_app_views_competicao_new_html_erb___2122299339273678101_69981347367280'
+  app/controllers/competicaos_controller.rb:15:in `new'
+
+
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (11.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.0ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (37.4ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (19.6ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (39.6ms)
